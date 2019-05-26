@@ -12,10 +12,14 @@ import io.ktor.response.respondText
 import io.ktor.routing.get
 import io.ktor.routing.routing
 import io.ktor.server.netty.EngineMain
+import jp.ac.titech.itsp.todo.config.Database
 
 fun main(args: Array<String>) = EngineMain.main(args)
 
 fun Application.main() {
+
+    Database.init()
+
     install(ContentNegotiation) {
         jackson {
             enable(SerializationFeature.INDENT_OUTPUT)
