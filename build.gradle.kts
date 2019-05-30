@@ -31,6 +31,7 @@ dependencies {
     implementation("io.ktor:ktor-server-core:$ktorVersion")
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
     implementation("io.ktor:ktor-jackson:$ktorVersion")
+    implementation("io.ktor:ktor-locations:$ktorVersion")
 
     /* DB */
     implementation("com.h2database:h2:$h2Version")
