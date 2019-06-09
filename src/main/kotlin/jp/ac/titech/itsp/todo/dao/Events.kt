@@ -1,4 +1,4 @@
-package jp.ac.titech.itsp.todo.model
+package jp.ac.titech.itsp.todo.dao
 
 import org.jetbrains.exposed.dao.EntityID
 import org.jetbrains.exposed.dao.IntEntity
@@ -12,8 +12,8 @@ object Events : IntIdTable() {
     val deadline = datetime("deadline")
 }
 
-class EventDao(id: EntityID<Int>) : IntEntity(id) {
-    companion object : IntEntityClass<EventDao>(Events)
+class EventEntity(id: EntityID<Int>) : IntEntity(id) {
+    companion object : IntEntityClass<EventEntity>(Events)
 
     var title by Events.title
     var memo by Events.memo
@@ -23,8 +23,8 @@ class EventDao(id: EntityID<Int>) : IntEntity(id) {
 }
 
 data class EventData(
-    var id: Int = 0,
-    var title: String = "",
-    var memo: String = "",
-    var deadline: Date = Date()
+    var id: Int,
+    var title: String,
+    var memo: String,
+    var deadline: Date
 )
