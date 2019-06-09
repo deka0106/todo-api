@@ -1,6 +1,6 @@
 # TODO API
 
-[![CircleCI](https://circleci.com/gh/deka0106/todo-ktor.svg?style=svg)](https://circleci.com/gh/deka0106/todo-ktor)
+[![CircleCI](https://circleci.com/gh/deka0106/todo-api.svg?style=svg)](https://circleci.com/gh/deka0106/todo-api)
 
 レポート課題: 簡易なTODO管理サービス用のHTTPサーバを作成する
 
