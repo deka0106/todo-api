@@ -97,4 +97,23 @@ class EventTest {
         }
     }
 
+    @Test
+    fun deleteById() {
+        withTestApplication({
+            main()
+        }) {
+            transaction {
+                EventEntity.new {
+                    title = "title"
+                    memo = "memo"
+                    deadline = DateTime()
+                }
+            }
+            handleRequest(HttpMethod.Delete, "/api/v1/event/1").apply {
+                assertEquals(HttpStatusCode.NoContent, response.status())
+            }
+            assertNull(transaction { EventEntity.findById(1) })
+        }
+    }
+
 }
